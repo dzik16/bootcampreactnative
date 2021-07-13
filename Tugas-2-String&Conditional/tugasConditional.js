@@ -55,41 +55,70 @@ inputan.question("Masukan Nama Anda : ", function(input1){
             }
         }
 
-        inputan.close();
-        
-    });
-});
 
 // Tugas Switch Case
+        console.log();
+        console.log("================= Tugas Switch Case =================");
+        console.log();
 
-console.log("================= Tugas Switch Case =================");
-console.log();
+        inputan.question("Masukan Hari [1-31] : ", function(input1){
+            inputan.question("Masukan Bulan [1-12] : ", function(input2){
+                inputan.question("Masukan Tahun [1900-2200] : ", function(input3){
+                    var in2 = Number(input2);
 
-inputan.question("Masukan Hari [1-31] : ", function(input1){
-    inputan.question("Masukan Bulan [1-12] : ", function(input2){
-        inputan.question("Masukan Tahun [1900-2200] : ", function(input3){
-            var hari = Number(input1);
-            var bulan = Number(input2);
-            var tahun = Number(input3);
+                    var bulan = "";
+                    switch (in2){
+                        case 1:
+                            bulan = "Januari";
+                            break;
+                        case 2:
+                            bulan = "Februari";
+                            break;
+                        case 3:
+                            bulan = "Maret";
+                            break;
+                        case 4:
+                            bulan = "April";
+                            break;
+                        case 5:
+                            bulan = "Mei";
+                            break;
+                        case 6:
+                            bulan = "Juni";
+                            break;
+                        case 7:
+                            bulan = "Juli";
+                            break;
+                        case 8:
+                            bulan = "Agustus";
+                            break;
+                        case 9:
+                            bulan = "September";
+                            break;
+                        case 10:
+                            bulan = "Oktober";
+                            break;
+                        case 11:
+                            bulan = "November";
+                            break;
+                        case 12:
+                            bulan = "Desember";
+                            break;
+                    }
 
-            var arrBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desembar"];
-            
-            if(hari >= 1 && hari <= 31){
-                if(bulan >= 1 && bulan <= 12){
-                    if(tahun >= 1900 && tahun <= 2200){
+                    if(input1 >= 1 && input1 <= 31 && input2 >= 1 && input2 <= 12 && input3 >= 1900 && input3 <= 2200){
                         console.log();
-                        console.log(hari+" "+arrBulan[bulan-1]+" "+tahun);
+                        console.log(input1+" "+bulan+" "+input3);
                     }else{
-                        console.log("Harap Masukan Dengan Benar!!");
-                    }        
-                }else{
-                    console.log("Harap Masukan Dengan Benar!!");
-                }
-            }else{
-                console.log("Harap Masukan Dengan Benar!!");
-            }
+                        console.log();
+                        console.log("Inputan Invalid!!");
+                    }
 
-            inputan.close();
+                    inputan.close();
+                });
+            });
         });
     });
 });
+
+
